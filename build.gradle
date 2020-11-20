@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    selenideVersion = "5.14.2"
+    junitVersion = "5.6.2"
+    junitEngineVersion = "5.6.2"
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:19.0.0'
+    implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+    testImplementation "com.codeborne:selenide:$selenideVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitEngineVersion"
+}
+
+// Чтобы могли запускать автотесты, из терминала в том числе по имени test
+test {
+    useJUnitPlatform()
+}
