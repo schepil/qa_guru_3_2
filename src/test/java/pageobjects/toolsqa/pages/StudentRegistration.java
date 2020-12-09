@@ -83,7 +83,7 @@ public class StudentRegistration {
     }
 
     public StudentRegistration uploadPicture(String file) {
-        uploadPictureBtn.uploadFile(new File("/home/stephen/Downloads/" + file));
+        uploadPictureBtn.uploadFile(new File(file));
         return this;
     }
 
